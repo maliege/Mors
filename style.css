@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3; /* Koyu mavi */
+    margin-bottom: 20px;
+}
+
+.morse-io {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Dikey hizalama */
+    gap: 20px; /* Bölümler arası boşluk */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #e9ecef; /* Açık gri arka plan */
+    border-radius: 5px;
+}
+
+.input-section, .output-section {
+    flex: 1; /* Eşit genişlik */
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column; /* Butonları alt alta */
+    gap: 10px;
+}
+
+.display {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 1.8em; /* Daha büyük yazı */
+    min-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', Courier, monospace; /* Mors için uygun font */
+    border-radius: 4px;
+    color: #555;
+    word-wrap: break-word; /* Uzun kodlar için */
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Mavi */
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Koyu mavi */
+}
+
+button:active {
+    transform: translateY(1px); /* Tıklama efekti */
+}
+
+#dotBtn, #dashBtn {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0 5px;
+    width: 60px; /* Sabit genişlik */
+}
+
+#clearBtn {
+    background-color: #dc3545; /* Kırmızı */
+}
+#clearBtn:hover {
+    background-color: #c82333; /* Koyu kırmızı */
+}
+
+#translateBtn {
+    font-size: 1.5em; /* Ok daha belirgin */
+}
+
+.audio-control {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.audio-control label {
+    margin-right: 10px;
+}
+
+.reference {
+    margin-top: 30px;
+}
+
+#morseTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#morseTable th, #morseTable td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#morseTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#morseTable td:last-child {
+    font-family: 'Courier New', Courier, monospace; /* Mors kodları için font */
+    font-weight: bold;
+}
+
+/* Mobil cihazlar için basit düzenleme */
+@media (max-width: 600px) {
+    .morse-io {
+        flex-direction: column;
+        align-items: stretch; /* Tam genişliğe yay */
+    }
+    .controls {
+        flex-direction: row; /* Butonlar yan yana */
+        justify-content: center;
+        margin-top: 10px;
+    }
+    button {
+         font-size: 1em; /* Buton yazıları biraz küçültülebilir */
+         padding: 10px 15px;
+    }
+     #dotBtn, #dashBtn {
+        font-size: 1.2em;
+        width: 50px;
+    }
+}

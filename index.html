@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mors Kodu Çalışma Sayfası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mors Kodu Çalışma</h1>
+
+        <!-- Mors Kodu Giriş ve Sonuç -->
+        <div class="morse-io">
+            <div class="input-section">
+                <h2>Giriş Yapın:</h2>
+                <div id="morseInputDisplay" class="display">-</div>
+                <div class="input-buttons">
+                    <button id="dotBtn">.</button>
+                    <button id="dashBtn">-</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                 <button id="translateBtn">→</button>
+                 <button id="clearBtn">Temizle</button>
+            </div>
+
+
+            <div class="output-section">
+                <h2>Sonuç:</h2>
+                <div id="resultDisplay" class="display">-</div>
+            </div>
+        </div>
+
+         <!-- (İsteğe Bağlı) Ses Kontrolü -->
+         <div class="audio-control">
+            <label for="audioToggle">Sesli Geri Bildirim:</label>
+            <input type="checkbox" id="audioToggle" checked>
+         </div>
+
+
+        <!-- Mors Alfabesi Referansı -->
+        <div class="reference">
+            <h2>Mors Alfabesi Referansı</h2>
+            <table id="morseTable">
+                <thead>
+                    <tr>
+                        <th>Karakter</th>
+                        <th>Mors Kodu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TypeScript ile doldurulacak -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="code.js" defer></script>
+</body>
+</html>
