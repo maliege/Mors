@@ -1,0 +1,115 @@
+/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Test sayfasına özel ek stiller */
+.mode-selection label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.mode-selection input[type="radio"] {
+    margin-right: 5px;
+}
+
+.test-area {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    min-height: 250px; /* İçeriğin yerleşimi için */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question {
+    font-size: 2.5em; /* Soruyu büyük göster */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace; /* Mors için uygun */
+    background-color: #e9ecef;
+    padding: 10px 20px;
+    border-radius: 4px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.answer-input {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Öğeleri alt alta dizer */
+    align-items: center; /* Ortalar */
+    gap: 15px; /* Öğeler arası boşluk */
+}
+
+#charInput {
+    padding: 10px;
+    font-size: 1.5em;
+    width: 80px; /* Tek karakter için yeterli */
+    text-align: center;
+    text-transform: uppercase; /* Otomatik büyük harf */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Mors giriş alanları için önceki stilden uyarlama */
+#morseInputDisplayTest {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 1.5em;
+    min-height: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 4px;
+    color: #555;
+    width: 80%; /* Genişliği ayarla */
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.morse-buttons-test button { /* Butonları yan yana koy */
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 25px; /* Yer kaplaması için */
+}
+
+.feedback.correct {
+    color: green;
+}
+
+.feedback.incorrect {
+    color: red;
+}
+
+.score {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#nextQuestionBtn {
+    background-color: #28a745; /* Yeşil */
+    margin-top: 10px;
+}
+
+#nextQuestionBtn:hover {
+    background-color: #218838;
+}
+
+/* Başlangıçta gerekmeyen elemanları gizle */
+#morseInputArea { display: none; }

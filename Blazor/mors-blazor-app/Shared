@@ -1,0 +1,87 @@
+@page "/mors-test"
+@using Microsoft.AspNetCore.Components.Web
+@inject IJSRuntime JSRuntime
+
+<h1>Mors Kodu Test</h1>
+
+<!-- Mod Seçimi -->
+<div class="mode-selection">
+    <h2>Test Modu Seçin:</h2>
+    <label>
+        <input type="radio" name="testMode" value="morseToChar" @bind="selectedMode" checked> Mors'tan Harfe
+    </label>
+    <label>
+        <input type="radio" name="testMode" value="charToMorse" @bind="selectedMode"> Harften Mors'a
+    </label>
+</div>
+
+<!-- Test Alanı -->
+<div class="test-area">
+    <div class="question" id="questionDisplay">@question</div>
+
+    <div class="answer-input">
+        <!-- Mod 1: Harf Girişi -->
+        <div id="charInputArea">
+            <input type="text" id="charInput" maxlength="1" placeholder="Harf?" @bind="charInput" @oninput="OnCharInput" autocomplete="off">
+        </div>
+
+        <!-- Mod 2: Mors Kodu Girişi -->
+        <div id="morseInputArea" style="display: @(selectedMode == "charToMorse" ? "block" : "none")">
+            <div id="morseInputDisplayTest" class="display">@morseInputDisplay</div>
+            <div class="morse-buttons-test">
+                <button @onclick="() => AddMorseInput('.')">.</button>
+                <button @onclick="() => AddMorseInput('-')">-</button>
+                <button @onclick="ClearMorseInput" style="background-color: #ffc107; color: #333;">Sil</button>
+            </div>
+        </div>
+    </div>
+
+    <button @onclick="CheckAnswer">Cevabı Kontrol Et</button>
+    <button id="nextQuestionBtn" style="display: none;" @onclick="NextQuestion">Sonraki Soru</button>
+
+    <div class="feedback" id="feedbackDisplay">@feedback</div>
+</div>
+
+<!-- Puan -->
+<div class="score">
+    Puan: <span id="scoreValue">@score</span>
+</div>
+
+<!-- Öğrenme Sayfasına Dönüş Linki (Opsiyonel) -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="index.html">Öğrenme Sayfasına Dön</a>
+</div>
+
+@code {
+    private string selectedMode = "morseToChar";
+    private string question = "?"; // Placeholder for the question
+    private string charInput;
+    private string morseInputDisplay = "-"; // Placeholder for Morse input display
+    private string feedback;
+    private int score;
+
+    private void OnCharInput(ChangeEventArgs e)
+    {
+        charInput = e.Value.ToString();
+    }
+
+    private void AddMorseInput(string input)
+    {
+        morseInputDisplay += input;
+    }
+
+    private void ClearMorseInput()
+    {
+        morseInputDisplay = "";
+    }
+
+    private void CheckAnswer()
+    {
+        // Logic to check the answer
+    }
+
+    private void NextQuestion()
+    {
+        // Logic to load the next question
+    }
+}
